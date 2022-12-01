@@ -51,7 +51,7 @@ func ScanIP(ip net.IP) *HostScan {
 	errcheck.Check(err)
 	ports := services.Tcp().Top(TCPPortsCount)
 
-	chanSize := PortRangeEnd - PortRangeStart + 1
+	chanSize := TCPPortsCount + 1
 	inputChan := make(chan int, chanSize)
 	outputChan := make(chan int, chanSize)
 
