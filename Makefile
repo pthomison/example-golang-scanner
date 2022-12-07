@@ -6,3 +6,6 @@ poc_two:
 
 poc_three:
 	go run ./hack/scan-ip-tcp-concurrency.go
+
+poc_four:
+	go run ./hack/scan-network.go

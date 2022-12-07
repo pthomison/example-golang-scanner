@@ -11,7 +11,7 @@ var (
 	PortRangeStart = 1
 	PortRangeEnd   = 65535
 
-	IPTarget = net.IPv4(192, 168, 0, 1)
+	IPTarget = net.IPv4(192, 168, 1, 1)
 )
 
 func main() {
