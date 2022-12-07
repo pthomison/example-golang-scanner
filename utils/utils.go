@@ -4,6 +4,10 @@ import (
 	"fmt"
 	"net"
 	"time"
+
+	"github.com/c-robinson/iplib"
+	"github.com/jreisinger/nmapservices"
+	"github.com/pthomison/errcheck"
 )
 
 var (
@@ -19,5 +23,33 @@ func IsPortOpen(ip net.IP, port int) bool {
 	} else {
 		conn.Close()
 		return true
+	}
+}
+
+func GetPopularPorts(limit int) []int {
+	ports := make([]int, limit)
+
+	services, err := nmapservices.Get()
+	errcheck.Check(err)
+	topNmapPorts := services.Tcp().Top(limit)
+
+	for i, v := range topNmapPorts {
+		ports[i] = int(v.Port)
+	}
+
+	return ports
+}
+
+func RangeNetwork(network *net.IPNet, callback func(net.IP)) {
+	ip := iplib.IncrementIP4By(network.IP, uint32(1))
+
+	for {
+		if network.Contains(ip) {
+			callback(ip)
+
+			ip = iplib.IncrementIP4By(ip, uint32(1))
+		} else {
+			break
+		}
 	}
 }
