@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	TCPTimeout = 1000 * time.Millisecond
+	TCPTimeout = 1 * time.Second
 )
 
 func IsPortOpen(ip net.IP, port int) bool {
@@ -40,16 +40,19 @@ func GetPopularPorts(limit int) []int {
 	return ports
 }
 
-func RangeNetwork(network *net.IPNet, callback func(net.IP)) {
-	ip := iplib.IncrementIP4By(network.IP, uint32(1))
+func RangeNetwork(network net.IPNet) []net.IP {
+	ips := make([]net.IP, 0)
+
+	ip := network.IP
 
 	for {
 		if network.Contains(ip) {
-			callback(ip)
-
+			ips = append(ips, ip)
 			ip = iplib.IncrementIP4By(ip, uint32(1))
 		} else {
 			break
 		}
 	}
+
+	return ips
 }
