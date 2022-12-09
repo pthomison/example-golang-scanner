@@ -10,8 +10,6 @@ import (
 func main() {
 	portcount := 100
 
-	// Ports := utils.GetPopularPorts(1000)
-
 	services, err := nmapservices.Get()
 	errcheck.Check(err)
 	topNmapPorts := services.Tcp().Top(portcount)
@@ -21,7 +19,5 @@ func main() {
 	}
 
 	fmt.Println()
-
-	// spew.Dump(topNmapPorts)
 
 }

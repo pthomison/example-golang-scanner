@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	TCPTimeout = 1 * time.Second
+	TCPTimeout = 2 * time.Second
 )
 
 func IsPortOpen(ip net.IP, port int) bool {

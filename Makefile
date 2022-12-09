@@ -9,3 +9,6 @@ poc_three:
 
 poc_four:
 	go run ./hack/scan-network.go
+
+poc_five:
+	go run ./hack/scan-network-concurrency.go

@@ -2,28 +2,23 @@ package main
 
 import (
 	"fmt"
-	"net"
 	"sync"
 
+	"github.com/pthomison/example-golang-scanner/hack/common"
 	"github.com/pthomison/example-golang-scanner/utils"
 )
 
 var (
-	PortsCount = 1000
-	Ports      = utils.GetPopularPorts(PortsCount)
-
-	IPTarget = net.IPv4(192, 168, 1, 1)
-
 	wg = new(sync.WaitGroup)
 )
 
 func main() {
-	fmt.Printf("Scanning IP (%v): ", IPTarget)
+	fmt.Printf("Scanning IP (%v): ", common.IPAddr)
 
-	for _, port := range Ports {
+	for _, port := range common.Ports {
 		go func(port int) {
 			wg.Add(1)
-			if utils.IsPortOpen(IPTarget, port) {
+			if utils.IsPortOpen(common.IPAddr, port) {
 				fmt.Printf("%v ", port)
 			}
 			wg.Done()
