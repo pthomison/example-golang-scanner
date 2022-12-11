@@ -1,4 +1,4 @@
-package common
+package hack
 
 import (
 	"net"
