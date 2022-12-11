@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-
 	fmt.Printf("Scanning IP (%v): ", common.IPAddr)
 
 	for _, port := range common.Ports {
@@ -18,5 +17,4 @@ func main() {
 	}
 
 	fmt.Println()
-
 }

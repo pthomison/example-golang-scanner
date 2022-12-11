@@ -9,7 +9,7 @@ import (
 
 var (
 	PortRangeStart = 1
-	PortRangeEnd   = 65535
+	PortRangeEnd   = 10000
 )
 
 func main() {

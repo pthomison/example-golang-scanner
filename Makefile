@@ -1,6 +1,9 @@
 poc_one:
 	go run ./hack/scan-ip.go
 
+print_ports:
+	go run ./hack/print-popular-ports.go
+
 poc_two:
 	go run ./hack/scan-ip-top-ports.go
 
