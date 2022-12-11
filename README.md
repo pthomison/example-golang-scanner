@@ -15,6 +15,7 @@ A bare bones tcp port scanner; Autodiscover local network && scan neighbors for 
 - [ ] /hack/scan-network-ip-concurrency.go: Port-scan && IP-scan concurrency across a network; Use the top X popular ports
 - [ ] /hack/arp-scan.go: Discover active entities in the network
 
+
 ### Objectives
 
 - [ ] Port-scan concurrency
@@ -24,8 +25,14 @@ A bare bones tcp port scanner; Autodiscover local network && scan neighbors for 
 - [ ] Some kind of E2E testing, potentially using another scanner to compare results 
 
 
+### TODOs
+
+- [ ] 
+
+
 ### Thoughts && Conclusions
 
 - Run a WaitGroup add *outside* of the goroutine, otherwise will race past your WaitGroup wait call
 - Unconstrained goroutine execution leads to tons of open file descritors && slowed/stopped performance
 - It seems like most network scanners will use ARP to discover what hosts are present && then scan those hosts; this seems more efficient
+- Figuring the correct wait time for the TCP scan is key
