@@ -2,8 +2,6 @@ package hack
 
 import (
 	"net"
-
-	"github.com/pthomison/example-golang-scanner/utils"
 )
 
 var (
@@ -12,7 +10,7 @@ var (
 	IPAddr  = net.IPv4(192, 168, 1, 1)
 	NetMask = []byte{255, 255, 255, 0}
 
-	Ports = utils.GetPopularPorts(PortsCount)
+	Ports = GetPopularPorts(PortsCount)
 
 	IPNetwork = net.IPNet{
 		IP:   IPAddr,

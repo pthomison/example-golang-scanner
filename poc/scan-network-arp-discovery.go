@@ -8,15 +8,13 @@ import (
 )
 
 func main() {
-
 	start := time.Now()
+	arpResults := hack.ARPScan(hack.IPNetwork)
 
-	ips := hack.RangeNetwork(hack.IPNetwork)
+	for _, arpResult := range arpResults {
 
-	for _, ip := range ips {
-		iptime := time.Now()
+		ip := arpResult.IP
 		results := hack.ScanIP(ip, hack.Ports)
-		hack.Elapsed(iptime)
 
 		if len(results.OpenPorts) > 0 {
 			fmt.Println(results)
@@ -25,5 +23,4 @@ func main() {
 	}
 
 	hack.Elapsed(start)
-
 }
