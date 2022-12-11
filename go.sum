@@ -1,5 +1,7 @@
 github.com/c-robinson/iplib v1.0.3 h1:NG0UF0GoEsrC1/vyfX1Lx2Ss7CySWl3KqqXh3q4DdPU=
 github.com/c-robinson/iplib v1.0.3/go.mod h1:i3LuuFL1hRT5gFpBRnEydzw8R6yhGkF4szNDIbF8pgo=
+github.com/j-keck/arping v1.0.3 h1:aeVk5WnsK6xPaRsFt5wV6W2x5l/n5XBNp0MMr/FEv2k=
+github.com/j-keck/arping v1.0.3/go.mod h1:aJbELhR92bSk7tp79AWM/ftfc90EfEi2bQJrbBFOsPw=
 github.com/jreisinger/nmapservices v0.1.2 h1:I0W1uEcipojtI8CpcRBuLh6pKA5v1LG1MOnj1E4MaMw=
 github.com/jreisinger/nmapservices v0.1.2/go.mod h1:THd4lTeAoL7N7hLl0ObImf/xVLFVPGmEJR54p+AH//c=
 github.com/pthomison/errcheck v0.0.3 h1:erjMMB1Z+x7SoNFwhv6tZtvw6rOokHlhmGGWjMwfcDU=

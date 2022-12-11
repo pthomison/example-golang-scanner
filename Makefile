@@ -14,4 +14,7 @@ poc_four:
 	go run ./poc/scan-network.go
 
 poc_five:
-	go run ./poc/scan-network-concurrency.go
+	go run ./poc/scan-network-arp-discovery.go
+
+arp_scan:
+	go run ./poc/arp-scan.go
